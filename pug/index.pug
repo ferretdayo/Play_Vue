@@ -5,8 +5,11 @@ html(lang='ja')
         title タイトル
         link(href="/css/style.css", rel="stylesheet")
     body
-        div#header
-        div#navigation
-        div#content
-            h1 helloWorld!
-        div#footer
+        template#child-template
+            input(v-model="msg")
+            button(v-on:click="notify") Dispatch Event
+        div#events-example
+            p Message: {{messages | json}}
+            child
+        script(type="text/javascript", src="/node_modules/vue/dist/vue.min.js")
+        script(type="text/javascript", src="/js/index.js")

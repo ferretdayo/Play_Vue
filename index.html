@@ -6,11 +6,15 @@
     <link href="/css/style.css" rel="stylesheet">
   </head>
   <body>
-    <div id="header"></div>
-    <div id="navigation"></div>
-    <div id="content">
-      <h1>helloWorld!</h1>
+    <template id="child-template">
+      <input v-model="msg">
+      <button v-on:click="notify">Dispatch Event</button>
+    </template>
+    <div id="events-example">
+      <p>Message: {{messages | json}}</p>
+      <child></child>
     </div>
-    <div id="footer"></div>
+    <script type="text/javascript" src="/node_modules/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
   </body>
 </html>
